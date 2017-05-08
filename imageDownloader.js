@@ -10,5 +10,9 @@ request.get(url)
          console.log('HTTPS Response Code: ', response.statusCode);
          console.log('Response Message: ', response.statusMessage);
          console.log('Content Type: ', response.headers['content-type']);
+         console.log('Downloading image...');
+       })
+       .on('end', function() {
+         console.log('Download complete.');
        })
        .pipe(fs.createWriteStream('./future.jpg'));
